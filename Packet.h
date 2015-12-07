@@ -11,11 +11,14 @@
 
 class Packet {
 private:
+    const static int _dataSizeOffset = 10;
+    const static int _bytesLeft = 245;
+    const static int _headerSize = 11;
     const static int _s = 256;
     uint8_t buff[_s];
 
     std::string data;
-    uint8_t size = 11; //packet size, 11 = header size
+    uint8_t size = _headerSize; //packet size, 11 = header size
 
     static uint16_t id;
 
