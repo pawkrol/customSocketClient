@@ -15,7 +15,8 @@ int main() {
 
     Packet *getPacket;
     sc->getResponse(getPacket);
-    cout << getPacket->getData();
+    cout << getPacket->getId();
+    delete getPacket;
 
     Packet sendPacket2;
     sendPacket2.putData("Bye");
@@ -23,7 +24,8 @@ int main() {
 
     Packet *getPacket2;
     sc->getResponse(getPacket2);
-    cout << getPacket2->getData();
+    cout << getPacket2->getId();
+    delete getPacket2;
 
     sc->closeSocket();
     delete sc;
